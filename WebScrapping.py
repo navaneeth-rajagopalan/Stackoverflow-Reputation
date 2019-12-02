@@ -16,7 +16,10 @@ class WebScrapping:
 
     def validate_page(self, user):
         title = self.soup.title.string
-        if self.PAGE_NOT_FOUND in title or user.upper() != title.split(' ')[1].upper():
+        so_user_title = title.split('User ')[1].split(' - Stack Overflow')[0]
+        if '-' in user:
+            so_user_title = '-'.join(so_user_title.split(' '))
+        if self.PAGE_NOT_FOUND in title or user.upper() != so_user_title.upper():
             raise Exception(self.ERROR_INVALID_USER_URL)
         else:
             print(self.MESSAGE_VALID_USER_URL + ' for ' + user)
