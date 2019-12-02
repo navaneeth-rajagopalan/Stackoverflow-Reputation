@@ -26,16 +26,16 @@ class User:
     def build_profile_info(self, regions):
         scrape = WebScrapping(self.so_url)
         users_by_region = {}
-        #try:
-        scrape.validate_page(self.user_name)
-        self.badges = scrape.get_badges()
-        self.reputation = scrape.get_reputation()
-        for region in regions:
-            users_by_region = UsersByRegion(region)
-            reputations = users_by_region.get_users()['Reputation']
-            self.relative_ranking[region] = self.calculate_relative_ranking(reputations, self.reputation)
-        #except Exception as e:
-            #print(str(e))
-            #raise Exception(str(e))
+        try:
+            scrape.validate_page(self.user_name)
+            self.badges = scrape.get_badges()
+            self.reputation = scrape.get_reputation()
+            for region in regions:
+                users_by_region = UsersByRegion(region)
+                reputations = users_by_region.get_users()['Reputation']
+                self.relative_ranking[region] = self.calculate_relative_ranking(reputations, self.reputation)
+        except Exception as e:
+            print(str(e))
+            raise Exception(str(e))
         
         

@@ -21,7 +21,7 @@ class WebScrapping:
         if self.PAGE_NOT_FOUND in title or user.upper() != title.split(' ')[1].upper():
             raise Exception(self.ERROR_INVALID_USER_URL)
         else:
-            print(self.MESSAGE_VALID_USER_URL + ' for ' + user.title())
+            print(self.MESSAGE_VALID_USER_URL + ' for ' + user)
             self.extract_user_card()
 
     def get_badges(self):
