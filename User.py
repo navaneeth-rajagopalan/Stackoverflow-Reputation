@@ -36,6 +36,4 @@ class User:
                 self.relative_ranking[region] = self.calculate_relative_ranking(reputations, self.reputation)
         except Exception as e:
             print(str(e))
-            raise Exception(str(e))
-        
-        
+            raise Exception(str(e))    
