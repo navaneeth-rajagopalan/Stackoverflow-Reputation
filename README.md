@@ -29,3 +29,8 @@ Steps to run the tool:
     b. Region_i - A list of n regions to get the StackOverflow user's relative ranking compared with the respective regions's users. In the below example - Region_1 is Melbourne, Region_2 is Sydney, Region_3 is Bengaluru
         e.g.
             Melbourne Sydney Bengaluru
+
+
+Additional Notes:
+
+The tool uses Stack Exchange Data Explorer (SEDE) to query StackOverflow database for users from a specific region. The query is saved in SEDE - https://data.stackexchange.com/stackoverflow/query/9320/find-stack-overflow-users-in-your-city-with-user-links. (Feed in the region - say Melbourne in the "Location" textbox and hit "Run Query" button. The URL of the "Download CSV" is used in the tool to query the StackOverlow users from a specific region)
